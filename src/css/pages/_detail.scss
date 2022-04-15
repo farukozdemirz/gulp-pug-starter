@@ -1,0 +1,216 @@
+.detail {
+    .detail-banner {
+        height: calc(40vh - 95px);
+        position: relative;
+
+        @media screen and (max-width:576px) {
+            padding-top: 95px;
+            height: 100% !important;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: calc(100% + 95px);
+            top: -95px;
+            background: linear-gradient(#000c7a 0%, #212c55 100%);
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            background-image: url("../assets/images/banner.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: -95px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.09;
+            z-index: 2;
+        }
+
+        .detail_banner_container {
+            height: 100%;
+
+            .row {
+                height: 100%;
+                align-items: flex-end;
+
+                .col-7 {
+                    align-self: center;
+                }
+            }
+        }
+    }
+
+    .detail-box {
+        position: relative;
+
+        .box-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 80%;
+
+
+            @media screen and(max-width:576px) {
+                padding-bottom: 50% !important;
+            }
+        }
+    }
+
+    .detail-image-full {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .swiper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+    }
+
+    #gallery_swiper {
+        position: relative;
+
+        .swiper-slide {
+            transform: scale(0.8);
+            position: relative;
+            transition: all 0.3s ease;
+
+            &:not(.swiper-slide-active) {
+                z-index: -1;
+
+
+                img {
+                    opacity: 0.2;
+                    filter: blur(5px);
+                    transition: all 0.3s ease;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    background-color: $claredRed;
+                    z-index: -1;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            &-active {
+                transform: scale(1) !important;
+            }
+        }
+
+        .swiper_controller {
+            width: 35%;
+            position: absolute;
+            top: 0;
+            z-index: 999;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            left: 50%;
+
+            @media screen and (max-width:992px) {
+                width: 55%;
+            }
+
+            @media screen and (max-width:756px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .detail-whatsapp-card {
+        .card {
+            height: 65px;
+            width: 100%;
+
+            .card-body {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .bg-success {
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            margin-right: -15px;
+            position: relative;
+            z-index: 99;
+
+            .whatsapp_image {
+                height: 30px;
+            }
+        }
+    }
+
+
+    textarea {
+        resize: none !important;
+    }
+
+    @keyframes shadow-pulse {
+        0% {
+            box-shadow: 0 0 0 0px rgba($color: $red, $alpha: 0.35);
+            transform: translateY(-50%) translateX(-50%) scale(1.05);
+        }
+
+        100% {
+            box-shadow: 0 0 0 35px rgba($color: $red, $alpha: 0);
+            transform: translateY(-50%) translateX(-50%) scale(1);
+        }
+    }
+
+}
+
+.video-preview-img {
+    width: 100%;
+    max-height: 450px;
+}
+
+.preview-play-button {
+    z-index: 1;
+    width: 65px;
+    height: 65px;
+    background-color: rgba($color: $red, $alpha: 0.65);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shadow-pulse 1.5s infinite;
+    cursor: pointer;
+
+    img {
+        height: 24px;
+    }
+}

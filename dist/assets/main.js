@@ -1,0 +1,1 @@
+"use strict";var app={};$(function(){app.socialMarker=function(){alert(2)},app.socialMarker()});

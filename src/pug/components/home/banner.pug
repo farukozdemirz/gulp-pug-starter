@@ -1,0 +1,32 @@
+.home-banner.overflow-hidden
+    //- include ./banner-contact.pug
+    #banner-slider.h-100.py-4.py-lg-0
+        .swiper-wrapper
+            .swiper-slide 
+                .container.banner_container
+                    .row.slider_wrapper.align-items-end
+                        .col-12.col-lg-7.align-self-center
+                            h1.display-1.slider_title Lorem Ipsum Dolor Sit Amet
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                            button.btn.btn-outline-light.d-flex.align-items-center.slider_button(type="button") Lorem Ipsum Dolor Sit Amet
+                                img.ms-5(src="./assets/images/icons/chevron.svg")
+                        .col-5.d-none.d-lg-block.overflow-hidden
+                            img.slider_image(src="./assets/images/img2.png", alt="", srcset="")
+            .swiper-slide 
+                .container.banner_container
+                    .row.slider_wrapper.align-items-end
+                        .col-12.col-lg-7.align-self-center
+                            h1.display-1.slider_title Lorem Ipsum Dolor Sit Amet
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                            button.btn.btn-outline-light.d-flex.align-items-center.slider_button(type="button") Lorem Ipsum Dolor Sit Amet
+                                img.ms-5(src="./assets/images/icons/chevron.svg")
+                        .col-5.d-none.d-lg-block.overflow-hidden
+                            img.slider_image(src="./assets/images/img2.png", alt="", srcset="")
+        .swiper_controller.container.d-flex.align-items-center.justify-content-between.pt-4
+            .swiper-button-prev-custom.swiper-btn-cstm
+                -var fill = "#000c7a"
+                include ../icons/chevron.pug
+            .swiper-pagination
+            .swiper-button-next-custom.swiper-btn-cstm
+                -var fill = "#000c7a"
+                include ../icons/chevron.pug

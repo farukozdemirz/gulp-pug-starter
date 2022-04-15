@@ -1,0 +1,46 @@
+@mixin query($type,
+    $variable: "desktop: min-width(1024), middle: max-width(1024), tablet: max-width(768), phone: max-width(414), iphone: max-width(375), samsung: max-width(360), mini: max-width(320)"
+
+) {
+    @if $type==desktop {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $type==middle {
+        @media screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $type==tablet {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $type==phone {
+        @media screen and (max-width: 414px) {
+            @content;
+        }
+    }
+
+    @else if $type==iphone {
+        @media screen and (max-width: 375px) {
+            @content;
+        }
+    }
+
+    @else if $type==samsung {
+        @media screen and (max-width: 360px) {
+            @content;
+        }
+    }
+
+    @else if $type==mini {
+        @media screen and (max-width: 320px) {
+            @content;
+        }
+    }
+}

@@ -4,9 +4,218 @@ html(lang="tr")
         - var title = "Altınbaş Üniversitesi"
         - var desc = "Altınbaş Üniversitesi"
         include ./inc/head.pug
-    body
-        main
-            .card
-                .card-body 
-                    |te
+    body.home
+        include ./inc/header.pug    
+        include ./components/home/banner.pug
+
+        main 
+            section.detailed_information.mt-4.mt-lg-5
+                .container
+                    .title_wrapper.text-center
+                        p.text-danger.fs-5 Hedeflediğin Bölüm ve Programla İlgili
+                        h1.text-primary.fw-bold.fs-2 Detaylı Bilgi Al
+                    .row.px-lg-5.list_informations.mb-lg-5.mb-4.mt-3    
+                        .col-12.col-lg-3.col-sm-6.mb-3.mb-lg-0
+                            label.mb-0.form-label.custom-lg-label(for='inputState') Fakülte/Yüksekokul
+                            select.form-select.custom-lg-select.fs-5(aria-label='Default select example')
+                                option(selected='') Fakülte/Yüksekokul Seç
+                                option(value='1') One
+                                option(value='2') Two
+                                option(value='3') Three
+                        .col-12.col-lg-3.col-sm-6.mb-3.mb-lg-0
+                            label.mb-0.form-label.custom-lg-label(for='inputState') Bölüm
+                            select.form-select.custom-lg-select.fs-5(aria-label='Default select example')
+                                option(selected='') Bölüm Seç
+                                option(value='1') One
+                                option(value='2') Two
+                                option(value='3') Three
+                        .col-12.col-lg-3.col-sm-6.mb-3.mb-lg-0
+                            label.mb-0.form-label.custom-lg-label(for='inputState') Puan Türü
+                            select.form-select.custom-lg-select.fs-5(aria-label='Default select example')
+                                option(selected='') Puan Türü Seç
+                                option(value='1') One
+                                option(value='2') Two
+                                option(value='3') Three
+                        .col-12.col-lg-3.col-sm-6.d-grid
+                            label.mb-0.form-label.custom-lg-label(for='inputState')
+                            button.py-lg-0.text-start.btn.btn-primary.d-flex.align-items-center.justify-content-between(type='button') Listele
+                                img(src="./assets/images/icons/chevron.svg")
+                    .title_wrapper.text-center.mt-1
+                        p.text-danger.fs-5 Lorem Ipsum Dolor Sit Amet
+                        h1.text-primary.fw-bold.fs-2 Lorem Ipsum
+                    .row.mt-4.mt-lg-5.box_section.mb-lg-5.mb-4
+                        each i, k in [{title:"Inspired Future",image:"./assets/images/icons/rocket.svg"},{title:"Üniverliseli",image:"./assets/images/icons/university.svg"},{title:"Ücret Hesaplama",image:"./assets/images/icons/calculate.svg"}]
+                            - var index = k;
+                            div(class=index==2?"col-12 col-sm-12 col-md-6 col-lg-4 mb-0 mb-lg-0":"col-12 col-sm-12 col-md-6 col-lg-4 mb-4 mb-lg-0" )
+                                .bg-primary.box_item
+                                    .box_content_first
+                                        .item_header.d-flex.align-items-center.justify-content-between
+                                            img(src=i.image, alt="")
+                                            img.clouds_image(src="./assets/images/icons/clouds.svg", alt="")
+                                        .item_body.d-flex.align-items-center
+                                            p.item_title.mb-0 #{i.title}
+                                        .item_footer
+                                            button.stretched-link.btn-sm.btn-sm-md.btn.btn-light.d-flex.align-items-center(type='button') Daha Fazla
+                                                img.ms-2(src="./assets/images/icons/chevron-black.svg" height="4")
+                    .title_wrapper.text-center.mt-1
+                        p.text-danger.fs-5 Lorem Ipsum Dolor Sit Amet
+                        h1.text-primary.fw-bold.fs-2 Lorem Ipsum
+                    .row.mt-4.mt-lg-5.box_section.mb-lg-4.mb-3
+                        .col-12
+                            ul.justify-content-sm-center#pills-tab.nav.nav-pills.mb-4(role="tablist")
+                                li.nav-item(role="presentation")
+                                    button.nav-link.active#pills-sayisal-tab(data-bs-toggle="pill" data-bs-target="#pills-sayisal" type="button" role="tab" aria-controls="pills-sayisal" aria-selected="true") Sayısal
+                                li.nav-item(role="presentation")
+                                    button.nav-link#pills-sozel-tab(data-bs-toggle="pill" data-bs-target="#pills-sozel" type="button" role="tab" aria-controls="pills-sozel" aria-selected="true") Sözel
+                                li.nav-item(role="presentation")
+                                    button.nav-link#pills-esitagirlik-tab(data-bs-toggle="pill" data-bs-target="#pills-esitagirlik" type="button" role="tab" aria-controls="pills-esitagirlik" aria-selected="true") Eşit Ağırlık
+                                li.nav-item(role="presentation")
+                                    button.nav-link#pills-tyt-tab(data-bs-toggle="pill" data-bs-target="#pills-tyt" type="button" role="tab" aria-controls="pills-contact" aria-selected="true") TYT
+                            .tab-content#pills-tabContent 
+                                .tab-pane.fade.show.active#pills-sayisal(role="tabpanel" aria-labelledby="pills-sayisal-tab")
+                                    .row 
+                                        each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
+                                            .col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card
+                                                img.faculty_image(src="./assets/images/au.svg")
+                                                .card.w-100 
+                                                    .card-body.stretched-link
+                                                        h6.card-title.text-primary #{i.title}
+                                                        p.text-muted.fs-6.mb-0 #{i.name}
+                                .tab-pane.fade#pills-sozel(role="tabpanel" aria-labelledby="pills-sozel-tab")
+                                    .row 
+                                        each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
+                                            .col-4.d-flex.align-items-center.faculty-card
+                                                img.faculty_image(src="./assets/images/au.svg")
+                                                .card.w-100 
+                                                    .card-body
+                                                        h6.card-title.text-primary #{i.title}
+                                                        p.text-muted.fs-6.mb-0 #{i.name}
+                                .tab-pane.fade#pills-esitagirlik(role="tabpanel" aria-labelledby="pills-esitagirlik-tab")
+                                    .row 
+                                        each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
+                                            .col-4.d-flex.align-items-center.faculty-card
+                                                img.faculty_image(src="./assets/images/au.svg")
+                                                .card.w-100 
+                                                    .card-body
+                                                        h6.card-title.text-primary #{i.title}
+                                                        p.text-muted.fs-6.mb-0 #{i.name}
+                                .tab-pane.fade#pills-tyt(role="tabpanel" aria-labelledby="pills-tyt-tab")
+                                    .row 
+                                        each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
+                                            .col-4.d-flex.align-items-center.faculty-card
+                                                img.faculty_image(src="./assets/images/au.svg")
+                                                .card.w-100 
+                                                    .card-body
+                                                        h6.card-title.text-primary #{i.title}
+                                                        p.text-muted.fs-6.mb-0 #{i.name}
+                                        
+
+            section
+                .container
+                    .title_wrapper.text-center
+                        p.text-danger.fs-5 Lorem Ipsum Dolor Sit Amet
+                        h1.text-primary.fw-bold.fs-2 Altınbaş’ta Eğitim ve Yaşam
+                    .row.mt-4.mt-lg-5.box_section.mb-lg-4.mb-3
+                        each i, k in [{title:"Yurtlar",image:"./assets/images/yurtlar.svg"},{title:"Kütüphane",image:"./assets/images/kutuphane.svg"},{title:"Öğrenci Klüpleri",image:"./assets/images/klupler.svg"},{title:"Engelsiz Birimi",image:"./assets/images/engelsiz.svg"},{title:"Sağlık Hizmetleri",image:"./assets/images/saglik.svg"},{title:"Yeme - İçme Kafe",image:"./assets/images/kafe.svg"}]
+                            .col-6.col-md-4.mb-2.mb-sm-4
+                                a(href="#").au_box_item.d-block.bg-danger
+                                    .d-flex.align-items-center.justify-content-center.box_content
+                                        img.au_box_image(src=i.image, alt=i.title)
+                                        h2.text-center.mb-0.fs-3.fw-bold.text-white #{i.title}
+            section.fast_menu
+                .container
+                    .title_wrapper.text-center
+                        p.text-danger.fs-5 Lorem Ipsum Dolor Sit Amet
+                        h1.text-primary.fw-bold.fs-2 Hızlı Menü
+                    .row.mt-4.mt-lg-5.mb-lg-4.mb-3
+                        each i, k in [{title:"Burslar"},{title:"Çift Anadal"},{title:"Yandan"},{title:"Dikey Geçiş"},{title:"Yatay Geçiş"},{title:"Yabancı Dil Hazırlık"},{title:"Ücretler ve Ödeme Koşulları"},{title:"Erasmus"},{title:"Mezun"},{title:"Kariyer ve Staj"},{title:"Üniverliseli"},{title:"Inspired Future"}]
+                           .col-6.col-md-4.d-flex.align-items-center.menu-card.mb-2.mb-sm-4
+                                img(src="./assets/images/auistanbul.svg")
+                                .card.w-100 
+                                    .card-body
+                                        h6.mb-0.fs-6.text-secondary #{i.title}
+            section.gallery
+                .container
+                    .title_wrapper.text-center
+                        p.text-danger.fs-5 Hedeflediğin Bölüm ve Programla İlgili
+                        h1.text-primary.fw-bold.fs-2 Galeri
+                    .row.mt-4.mt-lg-5.mb-lg-5.mb-4.gallery_wrapper
+                        .col-12.col-md-6.position-relative
+                            a(data-fancybox='' href='https://www.youtube.com/watch?v=_sI_Ps7JSEk')
+                                img.video_img(src="./assets/images/video.svg", alt="")
+                                .preview-play-button
+                                    img(src="./assets/images/play-icon.svg", alt="")
+                            .video_title_wrapper 
+                                h5.video_title Video Başlığı
+                                p.video_description.fw-light Video Açıklaması
+
+                        .col-12.col-md-6.mt-3 
+                            h3.fs-3.fw-bold.text-primary Lorem Ipsum Dolor
+                            p.mb-0.text-black Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            .row.small_image_row
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                .col-6.col-sm-4.mt-4
+                                    img(src="./assets/images/sample-1.svg", alt="") 
+            
+            section.students_slider
+                .container
+                    .title_wrapper.text-center
+                        h1.text-primary.fw-bold.fs-2 Öğrencilerimizi Dinliyoruz
+                .position-relative.mt-2.mt-lg-3.mb-lg-4.mb-3.students_slider_wrapper.pt-5
+                    .swiper#student_slider
+                        .swiper-wrapper
+                            .swiper-slide 
+                                .card.slider-card
+                                    .card-body
+                                        .slider-card-header.d-flex
+                                            img(src="./assets/images/student-1.svg", alt="")
+                                            div.mt-2.ms-2
+                                                h6.mb-1.fw-bold.text-primary Öğrenci Adı Soyadı
+                                                p.text-muted.fs-6.mb-0 Bölüm, Fakülte
+                                        p.fs-6.mt-4.text-secondary Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing elitr
+                            .swiper-slide 
+                                .card.slider-card
+                                    .card-body
+                                        .slider-card-header.d-flex
+                                            img(src="./assets/images/student-1.svg", alt="")
+                                            div.mt-2.ms-2
+                                                h6.mb-1.fw-bold.text-primary Öğrenci Adı Soyadı
+                                                p.text-muted.fs-6.mb-0 Bölüm, Fakülte
+                                        p.fs-6.mt-4.text-secondary Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing elitr
+                            .swiper-slide 
+                                .card.slider-card
+                                    .card-body
+                                        .slider-card-header.d-flex
+                                            img(src="./assets/images/student-1.svg", alt="")
+                                            div.mt-2.ms-2
+                                                h6.mb-1.fw-bold.text-primary Öğrenci Adı Soyadı
+                                                p.text-muted.fs-6.mb-0 Bölüm, Fakülte
+                                        p.fs-6.mt-4.text-secondary Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing elitr
+                            .swiper-slide 
+                                .card.slider-card
+                                    .card-body
+                                        .slider-card-header.d-flex
+                                            img(src="./assets/images/student-1.svg", alt="")
+                                            div.mt-2.ms-2
+                                                h6.mb-1.fw-bold.text-primary Öğrenci Adı Soyadı
+                                                p.text-muted.fs-6.mb-0 Bölüm, Fakülte
+                                        p.fs-6.mt-4.text-secondary Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing elitr
+                    .swiper_controller.container.d-flex.align-items-center.justify-content-between.py-4
+                        .swiper-button-prev-custom 
+                            img(src="./assets/images/slider-chevron.svg", alt="")
+                        .swiper-pagination-students.swiper-pagination
+                        .swiper-button-next-custom
+                            img(src="./assets/images/slider-chevron.svg", alt="")
+        .whatsapp-fixed
+            img(src="./assets/images/icons/whatsapp.svg", alt="")
+        include ./components/footer.pug
         include ./inc/foot.pug

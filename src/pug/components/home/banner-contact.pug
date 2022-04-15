@@ -1,0 +1,11 @@
+.banner-contact-wrapper
+    .banner_social_buttons
+        ul.p-0 
+            each i, k in [{name:"facebook",image:"./assets/images/icons/facebook.svg",data:240},{name:"twitter",image:"./assets/images/icons/twitter.svg",data:170},{name:"instagram",image:"./assets/images/icons/instagram.svg",data:100},{name:"whatsapp",image:"./assets/images/icons/whatsapp.svg",data:30}]
+                li(class=`marker_trigger marker_${i.name}` data-id=i.data) 
+                    a(href="#")
+                        img(src=i.image, alt=i.name)
+    //- .banner_contact 
+    //-     span.line.sm
+    //-     a(href="#").p-0 İletisşime Geç
+    //-     span.line

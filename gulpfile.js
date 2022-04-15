@@ -10,14 +10,12 @@ var uglify = require('gulp-uglify');
 
 
 task("scss", function () {
-    return src("./src/css/*.scss")
-        .pipe(sourcemaps.init())
+    return src("./src/css/**/*.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
         .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
         .pipe(dest("./dist/assets/"))
         .pipe(browserSync.stream());
 });
@@ -42,7 +40,7 @@ task("serve", function () {
         server: "./dist"
     });
 
-    watch("./src/css/*.scss", series("scss"));
+    watch("./src/**/*.scss", series("scss"));
     watch("./src/pug/*.pug", series("pug"));
     watch("./src/js/*.js", series("js"));
 })

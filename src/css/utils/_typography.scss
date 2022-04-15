@@ -1,0 +1,18 @@
+@mixin poppins($fontSize) {
+    font: $fontSize "poppins", sans-serif;
+}
+
+@mixin poppinsMedium($fontSize) {
+    font: $fontSize "poppins-medium", sans-serif;
+}
+
+@mixin poppinsBold($fontSize) {
+    font: $fontSize "poppins-bold", sans-serif;
+    font-weight: 600;
+}
+
+$xs:14px;
+$sm:16px;
+$md:18px;
+$lg:24px;
+$xl:36px;

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+html(lang="tr")
+    head
+        - var title = "Altınbaş Üniversitesi"
+        - var desc = "Altınbaş Üniversitesi"
+        include ./inc/head.pug
+    body.detail
+        include ./inc/header.pug    
+        .detail-banner
+            include ./components/detail/banner.pug    
+        main 
+            section.mt-5
+                .container
+                    .row
+                        .col-12.col-md-7
+                            .row 
+                                .col-12.col-lg-4.col-sm-6.mb-4
+                                    div.d-block.detail-box.bg-danger 
+                                        .box-content.d-flex.flex-column.align-items-center.justify-content-center
+                                            img(src="./assets/images/egitim-suresi.svg", alt="")
+                                            h5.fs-5.text-white.fw-bold.my-2 Eğitim Süresi
+                                            h6.fs-6.text-white.fw-light.mb-0 Lorem Ipsum
+
+                                .col-12.col-lg-4.col-sm-6.mb-4
+                                    div.d-block.detail-box.bg-danger 
+                                        .box-content.d-flex.flex-column.align-items-center.justify-content-center
+                                            img(src="./assets/images/yerleske.svg", alt="")
+                                            h5.fs-5.text-white.fw-bold.my-2 Eğitim Süresi
+                                            h6.fs-6.text-white.fw-light.mb-0 Lorem Ipsum
+                                .col-12.col-lg-4.col-sm-6.mb-4
+                                    div.d-block.detail-box.bg-danger 
+                                        .box-content.d-flex.flex-column.align-items-center.justify-content-center
+                                            img(src="./assets/images/egitim-dili.svg", alt="")
+                                            h5.fs-5.text-white.fw-bold.my-2 Eğitim Süresi
+                                            h6.fs-6.text-white.fw-light.mb-0 Lorem Ipsum
+                            .row
+                                .col-12
+                                    img.detail-image-full(src="./assets/images/detail-img.svg", alt="")           
+                                    h1.text-primary.fs-2.fw-bold.my-4 Başlık     
+                                    p.text-secondary Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    p.text-secondary Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    p.text-secondary Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    button.btn.btn-outline-primary.d-block(type='button') 
+                                        span.fs-6 Bölüm ücreti ile ilgili bilgi için tıklayınız
+                                    h1.text-primary.fs-2.fw-bold.my-4 Puan ve Kontenjanlar     
+                                    .table-responsive
+                                        table.table.table-hover.table-bordered
+                                            thead
+                                                tr
+                                                    th.text-muted Program Kodu
+                                                    th.text-muted Program
+                                                    th.text-muted Burs
+                                                    th.text-muted Puan Türü
+                                                    th.text-muted 2021 Kontejyanı
+                                                    th.text-muted 2020 En Küçük Puan
+                                                    th.text-muted 2020 Başarı Sırası
+                                            tbody.border-top-0
+                                                tr 
+                                                    td 1212312313
+                                                    td Lorem Ipsum
+                                                    td Burslu
+                                                    td SAY
+                                                    td 10
+                                                    td 312,31231
+                                                    td 150.000
+                                                tr 
+                                                    td 1212312313
+                                                    td Lorem Ipsum
+                                                    td Burslu
+                                                    td SAY
+                                                    td 10
+                                                    td 312,31231
+                                                    td 150.000
+                                    h1.text-primary.fs-2.fw-bold.my-4 Alternatif Bölümler     
+                                    .row  
+                                        each i, k in [{title:"Bölüm İsmi",image:"./assets/images/detail-img-2.svg",eduTime:"4 Yıl",language:"Türkçe",order:"102.000",type:"TS"},{title:"Bölüm İsmi",image:"./assets/images/detail-img-3.svg",eduTime:"4 Yıl",language:"Türkçe",order:"102.000",type:"TS"},{title:"Bölüm İsmi",image:"./assets/images/detail-img-4.svg",eduTime:"4 Yıl",language:"Türkçe",order:"102.000",type:"TS"}]
+                                            .col-12.col-md-6.col-lg-4.mb-4
+                                                .card
+                                                    img.card-img-top(src=i.image)
+                                                    .card-body.bg-claredDanger
+                                                        h5.card-title.text-white.fs-4 #{i.title}
+                                                        .row 
+                                                            .col-6 
+                                                                sm.text-white(style="white-space:nowrap;font-size:11px") Eğitim Süresi
+                                                                sm.fs-6.text-white(style="white-space:nowrap;") #{i.eduTime}
+                                                            .col-6 
+                                                                sm.text-white(style="white-space:nowrap;font-size:11px") Eğitim Dili
+                                                                sm.fs-6.text-white(style="white-space:nowrap;") #{i.language}
+                                                        .row.mt-3.mb-4
+                                                            .col-6 
+                                                                sm.text-white(style="white-space:nowrap;font-size:11px") Başarı Sırası
+                                                                sm.fs-6.text-white(style="white-space:nowrap;") #{i.order}
+                                                            .col-6 
+                                                                sm.text-white(style="white-space:nowrap;font-size:11px") Puan Türü
+                                                                sm.d-block.fs-6.text-white(style="white-space:nowrap;") #{i.type}
+                                                                    
+
+                                                        a.text-danger.btn.btn-light.fs-6.w-100.py-2(href='#') Daha Fazla
+                        .col-1.d-none.d-lg-block
+                        .col-12.col-md-5.col-lg-4
+                            .detail-whatsapp-card.d-flex.align-items-center
+                                div.bg-success.py-1.px-4 
+                                    img.whatsapp_image(src="./assets/images/icons/whatsapp.svg")
+                                .card
+                                    .card-body 
+                                        h6.fw-bold.mb-0.fs-6.ps-2 Whatsapp İletişim Hattı
+                            .card.mt-4 
+                                .card-body 
+                                    h6.fw-bold.mb-0.fs-6.text-center.mb-3 Lorem Ipsum Title
+                                    form(action="") 
+                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='Ad - Soyad' name="nameSurname")
+                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='E-posta' name="email")
+                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='Telefon' name="phone")
+                                        select.py-2.border-0.bg-passive.fs-6.text-muted.form-select.mb-3(aria-label='Z' name="department")
+                                            option(selected='') Bölüm/Program
+                                            option(value='1') One
+                                            option(value='2') Two
+                                            option(value='3') Three
+                                        textarea.border-0.fs-6.bg-passive.form-control.mb-3(rows='6' name="message" placeholder="Mesaj")
+                                        .form-check.mb-2
+                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' checked='')
+                                            label.form-check-label(for='flexCheckChecked')
+                                                | Yasal Metin Onayı
+                                        .form-check.mb-2
+                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' )
+                                            label.form-check-label(for='flexCheckChecked')
+                                                | Yasal Metin Onayı
+                                        .form-check.mb-2
+                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' )
+                                            label.form-check-label(for='flexCheckChecked')
+                                                | Yasal Metin Onayı
+
+                                        .d-flex.justify-content-center.mt-3
+                                            button.btn.btn-primary.fs-6.w-50.fw-light.py-2(type='button') Gönder
+                            .detail-video-preview.mt-5.position-relative 
+                                img.video-preview-img(src="./assets/images/detail-video-preview.svg", alt="")
+                                .preview-play-button
+                                    img(src="./assets/images/play-icon.svg", alt="")
+
+                                    
+                    .row.mt-4
+                        .col-12 
+                            p.text-center.text-danger.mb-3 Lorem Ipsum Dolor Sit Amet
+                            h1.text-primary.fs-2.fw-bold.mt-3.mb-4.mb-sm-5.text-center Galeri    
+                            .swiper#gallery_swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        img(src='./assets/images/gallery-image.svg')
+                                    .swiper-slide
+                                        img(src='./assets/images/gallery-image.svg')
+                                    .swiper-slide
+                                        img(src='./assets/images/gallery-image.svg')
+                                    .swiper-slide
+                                        img(src='./assets/images/gallery-image.svg')
+                                .swiper_controller.container.d-flex.align-items-center.justify-content-between.py-4
+                                    .swiper-button-prev-custom 
+                                        img(src="./assets/images/gallery-left.svg", alt="")
+                                    .swiper-button-next-custom
+                                        img(src="./assets/images/gallery-right.svg", alt="")
+            
+        include ./components/footer.pug
+        include ./inc/foot.pug
+
+                    
