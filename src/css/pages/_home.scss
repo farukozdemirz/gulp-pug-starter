@@ -1,10 +1,11 @@
 .home {
     .home-banner {
-        height: calc(100vh - 95px);
-
-        @media screen and (min-width:1921px) {
-            height: calc(72vh - 95px);
-        }
+        position: relative;
+        height: 100%;
+        padding-top: 95px;
+        // @media screen and (min-width:1921px) {
+        //     height: calc(72vh - 95px);
+        // }
 
         @media screen and (max-width:576px) {
             position: relative !important;
@@ -17,7 +18,6 @@
 
             .row {
                 height: 100%;
-                align-items: flex-end;
 
                 .col-7 {
                     align-self: center;
@@ -170,6 +170,8 @@
             }
 
             .slider_button {
+                margin-top: 40px;
+
                 @media screen and (max-width:576px) {
                     font-size: 14px;
                 }
@@ -181,6 +183,10 @@
 
                 @media screen and (max-width:1440px) {
                     max-height: 676px;
+                }
+
+                @media screen and (max-width:1280px) {
+                    max-height: 600px;
                 }
             }
         }
@@ -199,6 +205,15 @@
 
         .faculty-card {
             margin-bottom: 35px;
+
+            .card-body {
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: translateX(0.5%);
+                    background: darken($color: $white, $amount: 3);
+                }
+            }
 
             &:last-child {
                 @media screen and (max-width:576px) {
@@ -236,6 +251,7 @@
 
     section.fast_menu {
         .menu-card {
+
             img {
                 height: 55px;
                 margin-right: -15px;
@@ -250,6 +266,12 @@
 
             .card-body {
                 padding-left: 30px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: translateX(0.5%);
+                    background: darken($color: $white, $amount: 3);
+                }
 
                 @media screen and(max-width:576px) {
                     padding-left: 20px;

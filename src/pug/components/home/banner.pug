@@ -1,11 +1,13 @@
 .home-banner.overflow-hidden
-    //- include ./banner-contact.pug
+    .contact-absolute.d-none.d-lg-block
+        -var whatsapp = false;
+        include ../detail/contact-form.pug
     #banner-slider.h-100.py-4.py-lg-0
         .swiper-wrapper
             .swiper-slide 
                 .container.banner_container
-                    .row.slider_wrapper.align-items-end
-                        .col-12.col-lg-7.align-self-center
+                    .row.slider_wrapper
+                        .col-12.col-lg-7.slider_col
                             h1.display-1.slider_title Lorem Ipsum Dolor Sit Amet
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
                             button.btn.btn-outline-light.d-flex.align-items-center.slider_button(type="button") Lorem Ipsum Dolor Sit Amet
@@ -14,8 +16,8 @@
                             img.slider_image(src="./assets/images/img2.png", alt="", srcset="")
             .swiper-slide 
                 .container.banner_container
-                    .row.slider_wrapper.align-items-end
-                        .col-12.col-lg-7.align-self-center
+                    .row.slider_wrapper
+                        .col-12.col-lg-7.slider_col
                             h1.display-1.slider_title Lorem Ipsum Dolor Sit Amet
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
                             button.btn.btn-outline-light.d-flex.align-items-center.slider_button(type="button") Lorem Ipsum Dolor Sit Amet

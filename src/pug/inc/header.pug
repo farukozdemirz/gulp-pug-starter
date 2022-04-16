@@ -4,7 +4,10 @@
       .container-fluid
         a(href="/") 
           img.logo(src="./assets/images/logo.png", alt="logo")
-        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        .get-information.d-flex.d-lg-none.ml-auto   
+          include ../components/icons/info-icon.pug
+
+        button.navbar-toggler(type='button')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.me-auto.ms-auto.mb-2.mb-lg-0
@@ -23,4 +26,4 @@
           div.d-flex.align-items-center 
             a.btn-nav-menu(href="#")
               img(src="./assets/images/icons/icon-inf.png") 
-            button.btn.btn-danger.btn-block-custom(type='button') Bilgi Al
+            button#getInformation.btn.btn-danger.btn-block-custom(type='button') Bilgi Al

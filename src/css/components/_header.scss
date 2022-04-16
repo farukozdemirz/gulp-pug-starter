@@ -1,4 +1,25 @@
 .header_wrapper {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+
+    .get-information {
+        margin-left: auto;
+        height: 40px;
+        width: 40px;
+        background: $red;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+
+        svg {
+            fill: $white;
+            height: 65%;
+        }
+    }
 
     @media screen and (max-width:576px) {
         position: absolute !important;
@@ -6,7 +27,8 @@
 
     .header {
         height: 65px;
-        margin-top: 30px;
+
+        .navbar-toggler {}
 
         @media screen and (max-width:576px) {
             margin-top: 15px;

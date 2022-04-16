@@ -98,46 +98,12 @@ html(lang="tr")
                                                         a.text-danger.btn.btn-light.fs-6.w-100.py-2(href='#') Daha Fazla
                         .col-1.d-none.d-lg-block
                         .col-12.col-md-5.col-lg-4
-                            .detail-whatsapp-card.d-flex.align-items-center
-                                div.bg-success.py-1.px-4 
-                                    img.whatsapp_image(src="./assets/images/icons/whatsapp.svg")
-                                .card
-                                    .card-body 
-                                        h6.fw-bold.mb-0.fs-6.ps-2 Whatsapp İletişim Hattı
-                            .card.mt-4 
-                                .card-body 
-                                    h6.fw-bold.mb-0.fs-6.text-center.mb-3 Lorem Ipsum Title
-                                    form(action="") 
-                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='Ad - Soyad' name="nameSurname")
-                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='E-posta' name="email")
-                                        input.py-2.border-0.fs-6.form-control.bg-passive.mb-3(type='text' placeholder='Telefon' name="phone")
-                                        select.py-2.border-0.bg-passive.fs-6.text-muted.form-select.mb-3(aria-label='Z' name="department")
-                                            option(selected='') Bölüm/Program
-                                            option(value='1') One
-                                            option(value='2') Two
-                                            option(value='3') Three
-                                        textarea.border-0.fs-6.bg-passive.form-control.mb-3(rows='6' name="message" placeholder="Mesaj")
-                                        .form-check.mb-2
-                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' checked='')
-                                            label.form-check-label(for='flexCheckChecked')
-                                                | Yasal Metin Onayı
-                                        .form-check.mb-2
-                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' )
-                                            label.form-check-label(for='flexCheckChecked')
-                                                | Yasal Metin Onayı
-                                        .form-check.mb-2
-                                            input#flexCheckChecked.form-check-input(type='checkbox' value='' )
-                                            label.form-check-label(for='flexCheckChecked')
-                                                | Yasal Metin Onayı
-
-                                        .d-flex.justify-content-center.mt-3
-                                            button.btn.btn-primary.fs-6.w-50.fw-light.py-2(type='button') Gönder
+                            include ./components/detail/contact-form.pug
                             .detail-video-preview.mt-5.position-relative 
-                                img.video-preview-img(src="./assets/images/detail-video-preview.svg", alt="")
+                                a(data-fancybox='' href='https://www.youtube.com/watch?v=_sI_Ps7JSEk')
+                                    img.video-preview-img(src="./assets/images/detail-video-preview.svg", alt="")
                                 .preview-play-button
                                     img(src="./assets/images/play-icon.svg", alt="")
-
-                                    
                     .row.mt-4
                         .col-12 
                             p.text-center.text-danger.mb-3 Lorem Ipsum Dolor Sit Amet

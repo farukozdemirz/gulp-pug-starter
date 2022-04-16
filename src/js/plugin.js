@@ -74,7 +74,33 @@ $(function () {
         });
     }
 
+    app.getInformation = function () {
+        $(".get-information").on("click", function (params) {
+            $(".contact-absolute").css({
+                display: "block!important"
+            });
+            setTimeout(() => {
+                $(".contact-absolute").addClass("showed");
+            }, 1);
+        })
+        $("#getInformation").on("click", function (params) {
+            $(".contact-absolute").css("display", "block");
+            setTimeout(() => {
+                $(".contact-absolute").addClass("showed");
+            }, 1);
+        })
+
+        $(".close-contact-form").on("click", function () {
+            $(".contact-absolute").removeClass("showed");
+            setTimeout(() => {
+                $(".contact-absolute").css("display", "none");
+            }, 1);
+        })
+    }
+
+    app.getInformation();
     app.bannerSlider();
     app.detailGallery();
     app.studentsSlider();
+
 });

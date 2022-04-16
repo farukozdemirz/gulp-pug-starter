@@ -75,16 +75,16 @@ html(lang="tr")
                                 .tab-pane.fade.show.active#pills-sayisal(role="tabpanel" aria-labelledby="pills-sayisal-tab")
                                     .row 
                                         each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
-                                            .col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card
+                                            a(href="#").col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card.text-decoration-none
                                                 img.faculty_image(src="./assets/images/au.svg")
                                                 .card.w-100 
-                                                    .card-body.stretched-link
+                                                    .card-body
                                                         h6.card-title.text-primary #{i.title}
                                                         p.text-muted.fs-6.mb-0 #{i.name}
                                 .tab-pane.fade#pills-sozel(role="tabpanel" aria-labelledby="pills-sozel-tab")
                                     .row 
                                         each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
-                                            .col-4.d-flex.align-items-center.faculty-card
+                                            a(href="#").col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card.text-decoration-none
                                                 img.faculty_image(src="./assets/images/au.svg")
                                                 .card.w-100 
                                                     .card-body
@@ -93,7 +93,7 @@ html(lang="tr")
                                 .tab-pane.fade#pills-esitagirlik(role="tabpanel" aria-labelledby="pills-esitagirlik-tab")
                                     .row 
                                         each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
-                                            .col-4.d-flex.align-items-center.faculty-card
+                                            a(href="#").col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card.text-decoration-none
                                                 img.faculty_image(src="./assets/images/au.svg")
                                                 .card.w-100 
                                                     .card-body
@@ -102,14 +102,14 @@ html(lang="tr")
                                 .tab-pane.fade#pills-tyt(role="tabpanel" aria-labelledby="pills-tyt-tab")
                                     .row 
                                         each i, k in [{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"},{title:"Bölüm Adı",name:"Fakülte Adı"}]
-                                            .col-4.d-flex.align-items-center.faculty-card
+                                            a(href="#").col-12.col-sm-6.col-md-4.d-flex.align-items-center.faculty-card.text-decoration-none
                                                 img.faculty_image(src="./assets/images/au.svg")
                                                 .card.w-100 
                                                     .card-body
                                                         h6.card-title.text-primary #{i.title}
                                                         p.text-muted.fs-6.mb-0 #{i.name}
                                         
-
+            
             section
                 .container
                     .title_wrapper.text-center
@@ -129,7 +129,7 @@ html(lang="tr")
                         h1.text-primary.fw-bold.fs-2 Hızlı Menü
                     .row.mt-4.mt-lg-5.mb-lg-4.mb-3
                         each i, k in [{title:"Burslar"},{title:"Çift Anadal"},{title:"Yandan"},{title:"Dikey Geçiş"},{title:"Yatay Geçiş"},{title:"Yabancı Dil Hazırlık"},{title:"Ücretler ve Ödeme Koşulları"},{title:"Erasmus"},{title:"Mezun"},{title:"Kariyer ve Staj"},{title:"Üniverliseli"},{title:"Inspired Future"}]
-                           .col-6.col-md-4.d-flex.align-items-center.menu-card.mb-2.mb-sm-4
+                           a(href="#").col-6.col-md-4.d-flex.align-items-center.menu-card.mb-2.mb-sm-4.text-decoration-none
                                 img(src="./assets/images/auistanbul.svg")
                                 .card.w-100 
                                     .card-body
@@ -154,17 +154,20 @@ html(lang="tr")
                             p.mb-0.text-black Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             .row.small_image_row
                                 .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                    a(href='./assets/images/sample-1.svg' data-fancybox='product')
+                                        img(src="./assets/images/sample-1.svg", alt="") 
                                 .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                    a(href='./assets/images/sample-1.svg' data-fancybox='product')
+                                        img(src="./assets/images/sample-1.svg", alt="") 
                                 .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                    a(href='./assets/images/sample-1.svg' data-fancybox='product')
+                                        img(src="./assets/images/sample-1.svg", alt="") 
                                 .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                    a(href='./assets/images/sample-1.svg' data-fancybox='product')
+                                        img(src="./assets/images/sample-1.svg", alt="") 
                                 .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
-                                .col-6.col-sm-4.mt-4
-                                    img(src="./assets/images/sample-1.svg", alt="") 
+                                    a(href='./assets/images/sample-1.svg' data-fancybox='product')
+                                        img(src="./assets/images/sample-1.svg", alt="") 
             
             section.students_slider
                 .container
