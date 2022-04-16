@@ -5,7 +5,7 @@ $(function () {
     $(window).on('resize', function () {
         $(".contact-absolute").removeClass("showed")
     });
-    if ($(window).width() > 576) {
+    if ($(window).width() > 700) {
         $(window).on('scroll', function () {
             $(".contact-absolute").removeClass("showed")
         });
